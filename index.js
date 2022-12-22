@@ -111,7 +111,7 @@ for (let item of companies) {
 
         item.tax +=itemTwo
 
-        taxMax = companies.reduce((a,b) => {
+        let maxTax = companies.reduce((a,b) => {
             if (a.tax > b.tax){
                 return a
             } else {
@@ -119,15 +119,19 @@ for (let item of companies) {
             }
         })
 
-        taxMin= companies.reduce((a,b) => {
+        let minTax = companies.reduce((a,b) => {
             if (a.tax > b.tax){
                 return a
             } else {
                 return b
             }
         })
+        
 
-        averageExpenses = total / companies.length
+        minTax.push(taxMin)
+        maxTax.push(taxMax)
+
+        total / companies.length.push(averageExpenses)
 }
 
 
