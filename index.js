@@ -111,7 +111,7 @@ for (let item of companies) {
 
         item.tax +=itemTwo
 
-        let maxTax = companies.reduce((a,b) => {
+        taxMax = companies.reduce((a,b) => {
             if (a.tax > b.tax){
                 return a
             } else {
@@ -119,7 +119,7 @@ for (let item of companies) {
             }
         })
 
-        let minTax = companies.reduce((a,b) => {
+        taxMin= companies.reduce((a,b) => {
             if (a.tax > b.tax){
                 return a
             } else {
@@ -127,12 +127,9 @@ for (let item of companies) {
             }
         })
 
-        minTax.push(taxMin)
-
-        maxTax.push(taxMax)
-        
-        total / companies.length.push(averageExpenses)
+        averageExpenses = total / companies.length
 }
+
 
 // Найти общий tax со всех компаний
 // Найти кто меньше всех платит налог и кто больше всех платит налог
